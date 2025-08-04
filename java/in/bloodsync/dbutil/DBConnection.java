@@ -1,0 +1,36 @@
+package in.bloodsync.dbutil;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnection {
+ 
+	private static Connection conn;
+	public static void openConnection(String url, String username, String password) {
+		try {
+			conn=DriverManager.getConnection(url,username,password);
+			System.out.println("connection open succesfully");
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+	}
+	public static Connection getconnection() throws SQLException{
+		if(conn!=null) {
+			return conn;
+		}
+		throw new SQLException("Connection is null");
+	}
+	
+	public static void closeConnection() {
+		if(conn!=null) {
+			try
+			{
+				conn.close();
+			System.out.println("connection closed succesfully");
+			}catch(SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+}

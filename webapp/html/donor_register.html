@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="..//javascript/validate/donor_register.js">
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Donor registration</h1>
+    </header>
+    <section class="form-container">
+        <form action="../DonorRegisterServlet" method="post" >
+            <label for="name">Full name:</label>
+            <input type="text" name="name" id="name" required>
+            <label for="blood_type">BloodType:</label>
+            <select name="BloodType" id="blood_type">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" required>
+            <label for="contact">Contact Number</label>
+            <input type="number" name="contact" id="contact">
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Bloodsync | All rights Reserved</p>
+    </footer>
+</body>
+</html>
